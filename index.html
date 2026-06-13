@@ -193,6 +193,28 @@
   .footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;font-size:14px}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:12.5px;color:rgba(250,246,239,0.5);flex-wrap:wrap;gap:12px}
 
+  /* SIGNATURE STORY WAVE (motif from the book cover) */
+  .wave-divider{display:block;width:100%;height:clamp(60px,9vw,120px);color:var(--teal)}
+  .wave-divider path{stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;
+    stroke-dasharray:3000;stroke-dashoffset:3000;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)}
+  .wave-divider.in path{stroke-dashoffset:0}
+  .hero-wave{position:absolute;left:0;right:0;bottom:-2px;z-index:0;color:rgba(92,161,193,0.45);pointer-events:none}
+  .hero-wave svg{display:block;width:100%;height:auto}
+
+  /* PROOF MARQUEE RIBBON */
+  .ribbon{background:var(--ink);color:var(--paper);overflow:hidden;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08)}
+  .ribbon-track{display:flex;width:max-content;animation:marquee 32s linear infinite}
+  .ribbon:hover .ribbon-track{animation-play-state:paused}
+  .ribbon-item{display:inline-flex;align-items:center;gap:18px;padding:20px 0;white-space:nowrap;
+    font-family:var(--serif);font-size:clamp(18px,2vw,26px);letter-spacing:-0.01em}
+  .ribbon-item .sep{color:var(--teal);font-style:italic;padding:0 18px}
+  .ribbon-item .em{color:#8ecbe2;font-style:italic}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.ribbon-track{animation:none}.wave-divider path{stroke-dashoffset:0;transition:none}}
+
+  /* count-up numbers hold layout */
+  .stat-num{font-variant-numeric:tabular-nums}
+
   /* REVEAL */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
@@ -209,7 +231,7 @@
       <a class="nav-link" href="#proof">Proof</a>
       <a class="nav-link" href="#book">The Book</a>
       <a class="nav-link" href="#ecosystem">Companies</a>
-      <a class="btn btn-primary nav-cta" href="https://www.narrativerevenue.com" target="_blank" rel="noopener">Book a Call <span class="arr">→</span></a>
+      <a class="btn btn-primary nav-cta" href="book-a-call.html">Book a Call <span class="arr">→</span></a>
     </div>
   </div>
 </nav>
@@ -228,10 +250,10 @@
           <span class="italic">Close deals faster than ever.</span>
         </h1>
         <p class="lead reveal" style="margin-top:30px;max-width:560px">
-          StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:var(--ink);font-weight:600">$28.6M+ in closed outcomes</strong>. 
+          StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:var(--ink);font-weight:600">$28.6M+ in closed outcomes</strong>.
         </p>
         <div class="hero-cta reveal">
-          <a class="btn btn-primary" href="https://www.narrativerevenue.com" target="_blank" rel="noopener">Book a call for your business <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="book-a-call.html">Book a call for your business <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="#framework">See the framework <span class="arr">→</span></a>
         </div>
         <div class="ticker reveal">
@@ -245,7 +267,21 @@
       </div>
     </div>
   </div>
+  <!-- signature story wave (echoes the book cover line) -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 70 C 180 10, 320 10, 480 60 S 820 130, 1000 70 S 1300 0, 1440 50" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
 </section>
+
+<!-- PROOF MARQUEE RIBBON -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span class="ribbon-item"><span class="em">$28.6M+ in outcomes</span><span class="sep">/</span>#1 Amazon Best Seller<span class="sep">/</span>Turn your message into money<span class="sep">/</span><span class="em">Five beats. One story.</span><span class="sep">/</span>Field-tested with revenue teams<span class="sep">/</span></span>
+    <span class="ribbon-item"><span class="em">$28.6M+ in outcomes</span><span class="sep">/</span>#1 Amazon Best Seller<span class="sep">/</span>Turn your message into money<span class="sep">/</span><span class="em">Five beats. One story.</span><span class="sep">/</span>Field-tested with revenue teams<span class="sep">/</span></span>
+  </div>
+</div>
 
 <!-- STAT / PROOF IN NUMBERS -->
 <section class="section soft">
@@ -255,9 +291,9 @@
       <h2 class="d-2" style="max-width:680px">A framework you can measure.</h2>
     </div>
     <div class="stat-grid">
-      <div class="stat-cell reveal"><div class="stat-num">$28.6M+</div><div class="meta">In closed outcomes</div></div>
-      <div class="stat-cell reveal"><div class="stat-num">5</div><div class="meta">Beats. One story.</div></div>
-      <div class="stat-cell reveal"><div class="stat-num">#1</div><div class="meta">Amazon best seller</div></div>
+      <div class="stat-cell reveal"><div class="stat-num" data-count="28.6" data-decimals="1" data-prefix="$" data-suffix="M+">$28.6M+</div><div class="meta">In closed outcomes</div></div>
+      <div class="stat-cell reveal"><div class="stat-num" data-count="5" data-decimals="0" data-prefix="" data-suffix="">5</div><div class="meta">Beats. One story.</div></div>
+      <div class="stat-cell reveal"><div class="stat-num" data-count="1" data-decimals="0" data-prefix="#" data-suffix="">#1</div><div class="meta">Amazon best seller</div></div>
     </div>
     <div class="reveal" style="margin-top:clamp(40px,7vw,80px);display:flex;align-items:baseline;gap:28px;flex-wrap:wrap">
       <h3 class="d-3 italic">There's a method to it.</h3>
@@ -298,6 +334,10 @@
       <h2 class="d-2">The <span class="italic">StorySelling™</span> framework</h2>
       <p class="sub">Five beats you can run in any call, demo, or deck — in the order that makes a buyer sit up, lean in, and decide. Here's the shape. The depth is where the real work begins.</p>
     </div>
+
+    <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-bottom:8px">
+      <path d="M0 60 C 160 20, 280 20, 430 60 S 720 110, 880 60 S 1180 10, 1440 60"/>
+    </svg>
 
     <div class="fw reveal">
       <div class="step"><div class="step-num">Beat 01</div><div class="step-title">Opportunity</div><div class="step-body">Open with the possibility of a better future — before you ever mention what you sell.</div></div>
@@ -351,7 +391,7 @@
         <p>The culmination of everything we teach — the full StorySelling™ method in a #1 Amazon best seller. Turn your message into money and close deals faster than ever. A great place to start. A call is where we make it yours.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn btn-primary" href="https://www.amazon.com/How-Sell-Story-Message-Faster/dp/B0FV3L6LKT/" target="_blank" rel="noopener">Get it on Amazon <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="https://www.narrativerevenue.com" target="_blank" rel="noopener">Work with us <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="book-a-call.html">Work with us <span class="arr">→</span></a>
         </div>
       </div>
     </div>
@@ -416,7 +456,7 @@
       <div class="next-step reveal"><div class="ix">03</div><h3>Close faster</h3><p>You install it in your calls, demos, and decks — and start turning the way you tell your story into the way you win.</p></div>
     </div>
     <div class="reveal" style="margin-top:clamp(32px,4vw,52px);display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-      <a class="btn btn-pink" href="https://www.narrativerevenue.com" target="_blank" rel="noopener" style="padding:18px 28px;font-size:16.5px">Book a call for your business <span class="arr">→</span></a>
+      <a class="btn btn-pink" href="book-a-call.html" style="padding:18px 28px;font-size:16.5px">Book a call for your business <span class="arr">→</span></a>
       <a class="btn btn-ghost" href="https://www.amazon.com/How-Sell-Story-Message-Faster/dp/B0FV3L6LKT/" target="_blank" rel="noopener" style="color:var(--paper);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.3);padding:18px 24px">Start with the book <span class="arr">→</span></a>
     </div>
   </div>
@@ -438,7 +478,7 @@
           <li><a href="#framework">The Framework</a></li>
           <li><a href="#proof">Why It Works</a></li>
           <li><a href="#book">The Book</a></li>
-          <li><a href="https://www.narrativerevenue.com" target="_blank" rel="noopener">Book a Call</a></li>
+          <li><a href="book-a-call.html">Book a Call</a></li>
         </ul>
       </div>
       <div>
@@ -469,6 +509,35 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Signature wave: trigger draw-on when it enters view
+  const waveIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); waveIo.unobserve(e.target);} });
+  },{threshold:.3});
+  document.querySelectorAll('.wave-divider').forEach(el=>waveIo.observe(el));
+
+  // Count-up on the stat numbers
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  function countUp(el){
+    const target = parseFloat(el.dataset.count);
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const dur = 1500; const start = performance.now();
+    function frame(now){
+      const p = Math.min((now - start) / dur, 1);
+      const val = (target * easeOut(p)).toFixed(decimals);
+      el.textContent = prefix + val + suffix;
+      if(p < 1) requestAnimationFrame(frame);
+      else el.textContent = prefix + target.toFixed(decimals) + suffix;
+    }
+    requestAnimationFrame(frame);
+  }
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const statIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ if(!reduceMotion) countUp(e.target); statIo.unobserve(e.target);} });
+  },{threshold:.6});
+  document.querySelectorAll('.stat-num[data-count]').forEach(el=>statIo.observe(el));
 </script>
 </body>
 </html>
