@@ -73,17 +73,17 @@
   @media(max-width:860px){.nav-links .nav-link{display:none}}
   @media(max-width:720px){.nav-inner{padding:0 18px;height:72px}.nav-logo img{height:30px}}
 
-  /* HERO */
-  .hero{position:relative;overflow:hidden;padding:clamp(28px,4vw,40px) 0 0}
+  /* HERO — blobs bleed past the hero into the next section (no clip; body clips x-overflow) */
+  .hero{position:relative;padding:clamp(20px,3vw,32px) 0 0}
   .hero>.container{position:relative;z-index:2}
   @media(min-width:901px){.hero{display:flex;flex-direction:column;min-height:calc(100vh - 82px)}.hero>.container{flex:1;display:flex;align-items:center;width:100%}}
   .hero-blob{position:absolute;border-radius:999px;pointer-events:none;z-index:0;filter:blur(8px)}
-  .hero-blob.a{top:-180px;right:-220px;width:680px;height:680px;background:radial-gradient(circle at 35% 35%,rgba(177,99,230,0.18),rgba(168,131,248,0.08) 42%,transparent 70%)}
-  .hero-blob.b{bottom:-160px;left:-200px;width:520px;height:520px;background:radial-gradient(circle at 55% 55%,rgba(92,161,193,0.20),rgba(15,71,97,0.08) 46%,transparent 72%)}
+  .hero-blob.a{top:-160px;right:-220px;width:640px;height:640px;background:radial-gradient(circle at 35% 35%,rgba(177,99,230,0.18),rgba(168,131,248,0.08) 42%,transparent 70%)}
+  .hero-blob.b{bottom:-260px;left:-200px;width:560px;height:560px;background:radial-gradient(circle at 55% 55%,rgba(92,161,193,0.20),rgba(15,71,97,0.08) 46%,transparent 72%)}
   @media(max-width:720px){.hero-blob{display:none}}
   .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.22fr 1fr;gap:clamp(36px,5vw,80px);align-items:center}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.4vw,76px);line-height:1.0;letter-spacing:-0.03em}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.4vw,60px);line-height:1.02;letter-spacing:-0.03em}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(22px,2.4vw,32px)}
   .ticker{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--muted);margin-top:clamp(20px,2.2vw,28px)}
   .ticker-dot{width:7px;height:7px;border-radius:999px;background:var(--pink);flex:none;animation:pulse-dot 2s ease-in-out infinite}
@@ -91,14 +91,14 @@
   .ticker strong{color:var(--ink);font-weight:600}
   .hero-art{position:relative;display:flex;justify-content:center}
   .hero-art .halo{position:absolute;inset:-30px -10px 0 -30px;background:radial-gradient(ellipse at 60% 40%,rgba(177,99,230,0.22),rgba(92,161,193,0.12) 55%,transparent 75%);filter:blur(46px);border-radius:50%;z-index:0}
-  .hero-art img{position:relative;z-index:1;width:auto;max-height:min(62vh,500px);border-radius:12px;box-shadow:0 40px 80px -36px rgba(27,29,34,0.55),0 0 0 1px rgba(27,29,34,0.05)}
-  @media(max-width:900px){.hero-art img{max-height:380px}}
+  .hero-art img{position:relative;z-index:1;width:auto;max-height:min(54vh,440px);border-radius:12px;box-shadow:0 40px 80px -36px rgba(27,29,34,0.55),0 0 0 1px rgba(27,29,34,0.05)}
+  @media(max-width:900px){.hero-art img{max-height:360px}}
 
   /* STORY WAVE */
-  .wave-divider{display:block;width:100%;height:clamp(44px,6vw,80px);color:var(--teal)}
+  .wave-divider{display:block;width:100%;height:clamp(36px,5vw,64px);color:var(--teal)}
   .wave-divider path{stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:3000;stroke-dashoffset:3000;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)}
   .wave-divider.in path{stroke-dashoffset:0}
-  .hero-wave-end{position:relative;z-index:2;width:100%;margin-top:clamp(24px,4vw,48px)}
+  .hero-wave-end{position:relative;z-index:2;width:100%;margin-top:clamp(14px,2.5vw,30px)}
   @media(prefers-reduced-motion:reduce){.wave-divider path{stroke-dashoffset:0;transition:none}}
 
   /* SECTIONS */
@@ -244,7 +244,7 @@
           <span class="italic">Close deals faster than ever.</span>
         </h1>
         <p class="lead reveal" style="margin-top:clamp(18px,2vw,26px);max-width:560px">
-          The framework behind every Narrative company — a five-beat method that's driven <strong style="color:var(--ink);font-weight:600">$28.6M+ in closed outcomes</strong>. Most sellers stack information. We help you create transformation.
+          The framework behind everything we do — a five-beat method that's driven <strong style="color:var(--ink);font-weight:600">$28.6M+ in closed outcomes</strong>.
         </p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" href="book-a-call.html">Book a call for your business <span class="arr">→</span></a>
@@ -252,7 +252,7 @@
         </div>
         <div class="ticker reveal">
           <span class="ticker-dot"></span>
-          <span><strong>$28.6M+</strong> in outcomes &middot; <strong>#1</strong> Amazon best seller &middot; 1000's trained on the system</span>
+          <span><strong style="color:var(--dark-teal)">$28.6M+</strong> in outcomes &middot; <strong>#1</strong> Amazon best seller &middot; 1000's trained on the system</span>
         </div>
       </div>
       <div class="hero-art reveal">
@@ -268,8 +268,8 @@
   </div>
 </section>
 
-<!-- STAT BAND -->
-<section class="section soft">
+<!-- STAT BAND (continuous bone with hero; blob bleeds down into it) -->
+<section class="section stat-band">
   <div class="container">
     <div class="section-head reveal" style="margin-bottom:clamp(32px,5vw,64px)">
       <div class="eyebrow">The receipts</div>
