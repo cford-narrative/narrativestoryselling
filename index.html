@@ -65,8 +65,9 @@
   @media(max-width:720px){.nav-inner{padding:0 18px;height:72px}.nav-logo img{height:30px}}
 
   /* HERO */
-  .hero{position:relative;overflow:hidden;padding:clamp(28px,4vw,56px) 0}
-  @media(min-width:901px){.hero{display:flex;align-items:center;min-height:calc(100vh - 84px)}.hero>.container{width:100%}}
+  .hero{position:relative;overflow:hidden;padding:clamp(28px,4vw,40px) 0 0}
+  .hero>.container{position:relative;z-index:1}
+  @media(min-width:901px){.hero{display:flex;flex-direction:column;min-height:calc(100vh - 84px)}.hero>.container{flex:1;display:flex;align-items:center;width:100%}}
   .hero-field{position:absolute;inset:-30%;z-index:0;pointer-events:none;
     background:
       radial-gradient(38% 46% at 22% 26%,rgba(233,33,168,.22),transparent 62%),
@@ -91,9 +92,9 @@
   .wave-divider{display:block;width:100%;height:clamp(56px,8vw,104px);color:var(--teal)}
   .wave-divider path{stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:3000;stroke-dashoffset:3000;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)}
   .wave-divider.in path{stroke-dashoffset:0}
-  /* standalone wave band — its own space, never behind copy */
-  .wave-band{position:relative;background:var(--bg);padding:6px 0 0}
-  .wave-band .wave-divider{height:clamp(40px,6vw,72px);color:rgba(92,161,193,0.55)}
+  /* hero-bottom wave — sits on the hero's own gradient, below the copy */
+  .hero-wave-end{position:relative;z-index:1;width:100%;margin-top:clamp(28px,5vw,56px)}
+  .hero-wave-end .wave-divider{height:clamp(44px,6vw,80px);color:rgba(92,161,193,0.55)}
 
   /* MARQUEE RIBBON */
   .ribbon{background:var(--bg-deep);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -248,7 +249,7 @@
           <span class="italic">Close deals faster than ever.</span>
         </h1>
         <p class="lead reveal" style="margin-top:clamp(18px,2vw,26px);max-width:560px">
-          StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:#fff;font-weight:600">$28.6M+ in closed outcomes</strong>. Most sellers stack information. We help you create transformation.
+          StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:#fff;font-weight:600">$28.6M+ in closed outcomes</strong>. 
         </p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" href="book-a-call.html">Book a call for your business <span class="arr">→</span></a>
@@ -265,14 +266,13 @@
       </div>
     </div>
   </div>
+  <!-- story wave on the hero's own background, below the copy -->
+  <div class="hero-wave-end" aria-hidden="true">
+    <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 70 C 180 10, 320 10, 480 60 S 820 130, 1000 70 S 1300 0, 1440 50"/>
+    </svg>
+  </div>
 </section>
-
-<!-- STORY WAVE DIVIDER (own band, no text behind it) -->
-<div class="wave-band" aria-hidden="true">
-  <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 70 C 180 10, 320 10, 480 60 S 820 130, 1000 70 S 1300 0, 1440 50"/>
-  </svg>
-</div>
 
 <!-- MARQUEE RIBBON -->
 <div class="ribbon" aria-hidden="true">
@@ -314,7 +314,7 @@
           Buyers don't care about your product. They care about what happens in their world when it works. Yet most teams still lead with slides, stats, and feature rundowns that put buyers to sleep. This isn't Hollywood storytelling and it isn't theory — it's the science-backed, field-tested kind that turns complexity into clarity and features into outcomes.
         </p>
         <p class="belief-pull">
-          Most sellers stack information.<br />StorySelling™ creates transformation.
+          Most sellers stack information.<br />Narrative StorySelling™ creates transformation.
         </p>
       </div>
       <div class="belief-art">
