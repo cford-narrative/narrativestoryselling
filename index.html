@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Narrative StorySelling™ — Turn Your Message Into Money</title>
-<meta name="description" content="StorySelling™ is the framework behind the Narrative companies — a five-beat method responsible for $28.6M+ in closed outcomes. Turn your message into money and close deals faster than ever." />
+<meta name="description" content="Narrative StorySelling™ is the framework behind the Narrative companies — a five-beat method responsible for $28.6M+ in closed outcomes. Turn your message into money and close deals faster than ever." />
 <meta property="og:title" content="Narrative StorySelling™ — Turn Your Message Into Money" />
 <meta property="og:description" content="The five-beat framework responsible for $28.6M+ in outcomes. The craft that powers every Narrative company." />
 <meta property="og:image" content="public/how-to-sell-with-story.png" />
@@ -64,16 +64,19 @@
   @media(max-width:860px){.nav-links .nav-link{display:none}}
   @media(max-width:720px){.nav-inner{padding:0 18px;height:72px}.nav-logo img{height:30px}}
 
-  /* HERO */
-  .hero{position:relative;overflow:hidden;padding:clamp(28px,4vw,40px) 0 0}
+  /* HERO + STATS shared backdrop */
+  .hero-wrap{position:relative;overflow:hidden}
+  .hero-wrap>section{position:relative;z-index:1}
+  .hero{padding:clamp(28px,4vw,40px) 0 0}
   .hero>.container{position:relative;z-index:1}
   @media(min-width:901px){.hero{display:flex;flex-direction:column;min-height:calc(100vh - 84px)}.hero>.container{flex:1;display:flex;align-items:center;width:100%}}
-  .hero-field{position:absolute;inset:-30%;z-index:0;pointer-events:none;
+  .stat-section{background:transparent}
+  .hero-field{position:absolute;inset:-15% -30%;z-index:0;pointer-events:none;
     background:
-      radial-gradient(38% 46% at 22% 26%,rgba(233,33,168,.22),transparent 62%),
-      radial-gradient(42% 52% at 80% 22%,rgba(177,99,230,.24),transparent 64%),
-      radial-gradient(46% 56% at 60% 92%,rgba(117,44,255,.22),transparent 64%),
-      radial-gradient(40% 40% at 92% 80%,rgba(92,161,193,.16),transparent 64%);
+      radial-gradient(34% 24% at 22% 12%,rgba(233,33,168,.22),transparent 62%),
+      radial-gradient(38% 28% at 80% 9%,rgba(177,99,230,.24),transparent 64%),
+      radial-gradient(42% 30% at 58% 50%,rgba(117,44,255,.20),transparent 64%),
+      radial-gradient(38% 26% at 90% 64%,rgba(92,161,193,.15),transparent 64%);
     filter:blur(10px);animation:drift 22s ease-in-out infinite alternate}
   @keyframes drift{0%{transform:scale(1.05) translate(-1%,-1%)}100%{transform:scale(1.16) translate(2%,2%)}}
   .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(36px,5vw,80px);align-items:center}
@@ -237,9 +240,11 @@
 </nav>
 
 <div id="top">
+<!-- HERO + STATS share one continuous gradient backdrop -->
+<div class="hero-wrap">
+  <div class="hero-field"></div>
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-field"></div>
   <div class="container">
     <div class="hero-grid">
       <div>
@@ -249,7 +254,7 @@
           <span class="italic">Close deals faster than ever.</span>
         </h1>
         <p class="lead reveal" style="margin-top:clamp(18px,2vw,26px);max-width:560px">
-          StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:#fff;font-weight:600">$28.6M+ in closed outcomes</strong>. 
+          Narrative StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:#fff;font-weight:600">$28.6M+ in closed outcomes</strong>. 
         </p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" href="book-a-call.html">Book a call for your business <span class="arr">→</span></a>
@@ -274,16 +279,8 @@
   </div>
 </section>
 
-<!-- MARQUEE RIBBON -->
-<div class="ribbon" aria-hidden="true">
-  <div class="ribbon-track">
-    <span class="ribbon-item"><span class="em">$28.6M+ in outcomes</span><span class="sep">/</span>#1 Amazon Best Seller<span class="sep">/</span>Turn your message into money<span class="sep">/</span><span class="em">Five beats. One story.</span><span class="sep">/</span>Field-tested with revenue teams<span class="sep">/</span></span>
-    <span class="ribbon-item"><span class="em">$28.6M+ in outcomes</span><span class="sep">/</span>#1 Amazon Best Seller<span class="sep">/</span>Turn your message into money<span class="sep">/</span><span class="em">Five beats. One story.</span><span class="sep">/</span>Field-tested with revenue teams<span class="sep">/</span></span>
-  </div>
-</div>
-
-<!-- STAT BAND -->
-<section class="section alt">
+<!-- STAT BAND (shares the hero's gradient backdrop) -->
+<section class="section stat-section">
   <div class="container">
     <div class="section-head reveal" style="margin-bottom:clamp(32px,5vw,64px)">
       <div class="eyebrow">The receipts</div>
@@ -300,6 +297,7 @@
     </div>
   </div>
 </section>
+</div><!-- /hero-wrap -->
 
 <!-- WHY STORY SELLS -->
 <section class="section">
@@ -330,7 +328,7 @@
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">The method</div>
-      <h2 class="d-2">The <span class="grad-text">StorySelling™</span> framework</h2>
+      <h2 class="d-2">The <span class="grad-text">Narrative StorySelling™</span> framework</h2>
       <p class="sub">Five beats you can run in any call, demo, or deck — in the order that makes a buyer sit up, lean in, and decide. Here's the shape. The depth is where the real work begins.</p>
     </div>
 
@@ -373,7 +371,7 @@
       <figure class="testi reveal">
         <div class="qm">&ldquo;</div>
         <blockquote>Cut every word, slide, and click that doesn't land on an outcome. The teams who win make their message impossible to ignore. That's the whole game.</blockquote>
-        <figcaption><div class="who">The Method</div><div class="role meta">StorySelling™</div></figcaption>
+        <figcaption><div class="who">The Method</div><div class="role meta">Narrative StorySelling™</div></figcaption>
       </figure>
     </div>
   </div>
@@ -387,7 +385,7 @@
       <div class="reveal">
         <div class="eyebrow">The book</div>
         <h2 class="d-3">How to Sell With <span class="grad-text">Story</span></h2>
-        <p>The culmination of everything we teach — the full StorySelling™ method in a #1 Amazon best seller. Turn your message into money and close deals faster than ever. A great place to start. A call is where we make it yours.</p>
+        <p>The culmination of everything we teach — the full Narrative StorySelling™ method in a #1 Amazon best seller. Turn your message into money and close deals faster than ever. A great place to start. A call is where we make it yours.</p>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn btn-primary" href="https://www.amazon.com/How-Sell-Story-Message-Faster/dp/B0FV3L6LKT/" target="_blank" rel="noopener">Get it on Amazon <span class="arr">→</span></a>
           <a class="btn btn-ghost" href="book-a-call.html">Work with us <span class="arr">→</span></a>
@@ -405,7 +403,7 @@
       <div class="reveal">
         <div class="eyebrow">The author</div>
         <h2 class="d-3">Hi, I'm <span class="grad-text">Chris Ford.</span></h2>
-        <p>I built the Narrative companies around one belief: the right story, told well, can change your entire life. StorySelling™ is the craft underneath all of it — the framework I've used in the field and with revenue teams to drive $28.6M+ in outcomes. I didn't write it for the shelf. I wrote it for the sales call.</p>
+        <p>I built the Narrative companies around one belief: the right story, told well, can change your entire life. Narrative StorySelling™ is the craft underneath all of it — the framework I've used in the field and with revenue teams to drive $28.6M+ in outcomes. I didn't write it for the shelf. I wrote it for the sales call.</p>
         <p>This page gives you the shape. What it can't give you is your story — the exact sequence for your product, your buyer, your market. That's what we build together.</p>
         <div style="margin-top:28px"><a class="btn btn-ghost" href="https://www.itschrisford.com" target="_blank" rel="noopener">More about Chris <span class="arr">→</span></a></div>
       </div>
@@ -419,11 +417,11 @@
     <div class="section-head reveal">
       <div class="eyebrow">The Narrative Companies</div>
       <h2 class="d-2">One framework. <span class="italic">Three ways to put it to work.</span></h2>
-      <p class="sub">StorySelling™ is the philosophy. These are the places it lives — pick the door that fits where you are.</p>
+      <p class="sub">Narrative StorySelling™ is the philosophy. These are the places it lives — pick the door that fits where you are.</p>
     </div>
     <div class="eco-grid">
       <a class="eco-card reveal" href="https://www.narrativerevenue.com" target="_blank" rel="noopener">
-        <div><div class="en">Narrative Revenue</div><div class="ed">For consultants and teams ready to close the gap between what they're worth and what they're making. Install StorySelling™ in your pipeline.</div></div>
+        <div><div class="en">Narrative Revenue</div><div class="ed">For consultants and teams ready to close the gap between what they're worth and what they're making. Install Narrative StorySelling™ in your pipeline.</div></div>
         <span class="earr">→</span>
       </a>
       <a class="eco-card reveal" href="https://www.narrativecareers.com" target="_blank" rel="noopener">
@@ -469,10 +467,10 @@
       <div>
         <img src="public/narrative-mark-white.png" alt="Narrative" style="height:36px;width:auto;margin-bottom:20px" />
         <p style="font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.2;color:#fff">The right story, told well,<br />changes everything.</p>
-        <p style="margin-top:20px;font-size:14px;color:var(--muted);line-height:1.55;max-width:360px">StorySelling™ is the framework behind the Narrative companies — responsible for $28.6M+ in closed outcomes.</p>
+        <p style="margin-top:20px;font-size:14px;color:var(--muted);line-height:1.55;max-width:360px">Narrative StorySelling™ is the framework behind the Narrative companies — responsible for $28.6M+ in closed outcomes.</p>
       </div>
       <div>
-        <div class="meta" style="color:var(--muted-2);margin-bottom:18px">StorySelling</div>
+        <div class="meta" style="color:var(--muted-2);margin-bottom:18px">Narrative StorySelling</div>
         <ul>
           <li><a href="#framework">The Framework</a></li>
           <li><a href="#proof">Why It Works</a></li>
