@@ -37,6 +37,9 @@
   @media(max-width:720px){.container{padding:0 22px}}
 
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  /* continuous brand sweep: pink -> purple -> teal, so the palette reads as one system */
+  .flow{background:linear-gradient(168deg,#E921A8 0%,#B163E6 24%,#a883f8 40%,#7FB4CC 70%,#8ecbe2 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .flow-it{font-style:italic;font-weight:500}
   .d-2{font-size:clamp(38px,5.4vw,68px);line-height:1.05;letter-spacing:-0.025em;font-weight:500}
   .d-3{font-size:clamp(30px,4.2vw,50px);line-height:1.06;letter-spacing:-0.02em;font-weight:500}
   .italic{font-style:italic;font-weight:500;color:var(--sky)}
@@ -250,8 +253,7 @@
       <div>
         <div class="eyebrow reveal" style="margin-bottom:26px">Narrative StorySelling™</div>
         <h1 class="reveal" style="margin-bottom:0">
-          Turn your message into <span class="grad-text">money.</span><br />
-          <span class="italic">Close deals faster than ever.</span>
+          Turn your message into <span class="flow">money<span class="flow-it"> and close deals faster than ever.</span></span>
         </h1>
         <p class="lead reveal" style="margin-top:clamp(18px,2vw,26px);max-width:560px">
           Narrative StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:#fff;font-weight:600">$28.6M+ in closed outcomes</strong>. 
