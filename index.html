@@ -71,7 +71,8 @@
   @media(max-width:720px){.nav-inner{padding:0 18px;height:72px}.nav-logo img{height:34px}}
 
   /* HERO */
-  .hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,96px) 0 clamp(56px,7vw,104px)}
+  .hero{position:relative;overflow:hidden;padding:clamp(28px,4vw,56px) 0}
+  @media(min-width:901px){.hero{display:flex;align-items:center;min-height:calc(100vh - 84px)}.hero>.container{width:100%}}
   .hero-blob{position:absolute;top:-200px;right:-260px;width:720px;height:720px;border-radius:999px;
     background:radial-gradient(circle at 35% 35%,rgba(177,99,230,0.16),rgba(168,131,248,0.08) 40%,transparent 70%);pointer-events:none;z-index:0}
   .hero-blob.two{top:auto;bottom:-180px;left:-200px;right:auto;width:560px;height:560px;
@@ -79,15 +80,15 @@
   @media(max-width:720px){.hero-blob{display:none}}
   .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(36px,5vw,80px);align-items:center}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:44px}}
-  .hero h1{font-size:clamp(46px,7.2vw,92px);line-height:0.98;letter-spacing:-0.03em;font-weight:500}
-  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
-  .ticker{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted);margin-top:30px}
+  .hero h1{font-size:clamp(38px,5vw,70px);line-height:1.0;letter-spacing:-0.03em;font-weight:500}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(22px,2.4vw,30px)}
+  .ticker{display:flex;gap:12px;align-items:center;font-size:13px;color:var(--muted);margin-top:clamp(20px,2.2vw,26px)}
   .ticker-dot{width:7px;height:7px;border-radius:999px;background:var(--pink);flex:none;animation:pulse-dot 2s ease-in-out infinite}
   @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(233,33,168,0.5)}50%{box-shadow:0 0 0 5px rgba(233,33,168,0)}}
   .hero-art{position:relative;display:flex;justify-content:center}
   .hero-art .glow{position:absolute;inset:-40px -10px 0 -40px;background:radial-gradient(ellipse at 60% 40%,rgba(177,99,230,0.28) 0%,rgba(92,161,193,0.12) 55%,transparent 75%);filter:blur(50px);border-radius:50%;z-index:0}
-  .hero-art img{position:relative;z-index:1;width:auto;max-height:560px;border-radius:12px;box-shadow:0 40px 90px -40px rgba(0,0,0,.55)}
-  @media(max-width:900px){.hero-art img{max-height:420px}}
+  .hero-art img{position:relative;z-index:1;width:auto;max-height:min(62vh,500px);border-radius:12px;box-shadow:0 40px 90px -40px rgba(0,0,0,.55)}
+  @media(max-width:900px){.hero-art img{max-height:380px}}
 
   /* SECTIONS */
   .section{padding:clamp(72px,9vw,128px) 0}
@@ -249,7 +250,7 @@
           Turn your message into money.<br />
           <span class="italic">Close deals faster than ever.</span>
         </h1>
-        <p class="lead reveal" style="margin-top:30px;max-width:560px">
+        <p class="lead reveal" style="margin-top:clamp(18px,2vw,26px);max-width:560px">
           StorySelling™ is the framework behind every Narrative company — a five-beat method that's driven <strong style="color:var(--ink);font-weight:600">$28.6M+ in closed outcomes</strong>.
         </p>
         <div class="hero-cta reveal">
