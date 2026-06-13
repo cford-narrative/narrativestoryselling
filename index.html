@@ -91,8 +91,9 @@
   .wave-divider{display:block;width:100%;height:clamp(56px,8vw,104px);color:var(--teal)}
   .wave-divider path{stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:3000;stroke-dashoffset:3000;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)}
   .wave-divider.in path{stroke-dashoffset:0}
-  .hero-wave{position:absolute;left:0;right:0;bottom:-2px;z-index:0;color:rgba(92,161,193,0.5);pointer-events:none}
-  .hero-wave svg{display:block;width:100%;height:auto}
+  /* standalone wave band — its own space, never behind copy */
+  .wave-band{position:relative;background:var(--bg);padding:6px 0 0}
+  .wave-band .wave-divider{height:clamp(40px,6vw,72px);color:rgba(92,161,193,0.55)}
 
   /* MARQUEE RIBBON */
   .ribbon{background:var(--bg-deep);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -264,12 +265,14 @@
       </div>
     </div>
   </div>
-  <div class="hero-wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 70 C 180 10, 320 10, 480 60 S 820 130, 1000 70 S 1300 0, 1440 50" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    </svg>
-  </div>
 </section>
+
+<!-- STORY WAVE DIVIDER (own band, no text behind it) -->
+<div class="wave-band" aria-hidden="true">
+  <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 70 C 180 10, 320 10, 480 60 S 820 130, 1000 70 S 1300 0, 1440 50"/>
+  </svg>
+</div>
 
 <!-- MARQUEE RIBBON -->
 <div class="ribbon" aria-hidden="true">
