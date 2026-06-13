@@ -37,16 +37,19 @@
   .container{max-width:var(--maxw);margin:0 auto;padding:0 32px}
   @media(max-width:720px){.container{padding:0 22px}}
 
-  .grad-text{background:var(--grad-bright);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-  /* headline sweep follows the logo: pink -> light pink -> white -> light purple -> purple (top to bottom) */
-  .flow{background:linear-gradient(168deg,#eb2bab 0%,#ffc9e4 20%,#f1f6ff 44%,#977eff 72%,#7839ff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  /* one solid accent per section, set via --ac (defaults to sky) */
+  .ac-pink{--ac:#E921A8}
+  .ac-purple{--ac:#B163E6}
+  .ac-sky{--ac:#8ecbe2}
+  .grad-text{color:var(--ac,#8ecbe2)}
+  .flow{color:var(--ac,#8ecbe2)}
   .flow-it{font-style:italic;font-weight:500}
   .d-2{font-size:clamp(38px,5.4vw,68px);line-height:1.05;letter-spacing:-0.025em;font-weight:500}
   .d-3{font-size:clamp(30px,4.2vw,50px);line-height:1.06;letter-spacing:-0.02em;font-weight:500}
-  .italic{font-style:italic;font-weight:500;color:var(--sky)}
+  .italic{font-style:italic;font-weight:500;color:var(--ac,#8ecbe2)}
   .lead{font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--muted)}
   .meta{font-family:var(--sans);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;color:var(--muted)}
-  .eyebrow{display:inline-block;font-family:var(--sans);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--sky);font-weight:600}
+  .eyebrow{display:inline-block;font-family:var(--sans);font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ac,#8ecbe2);font-weight:600}
 
   .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:999px;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:-0.005em;transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .25s ease}
   .btn .arr{display:inline-block;transition:transform .25s ease}
@@ -109,7 +112,7 @@
   .ribbon:hover .ribbon-track{animation-play-state:paused}
   .ribbon-item{display:inline-flex;align-items:center;padding:18px 0;white-space:nowrap;font-family:var(--serif);font-size:clamp(17px,1.9vw,24px);letter-spacing:-0.01em;color:rgba(255,255,255,0.78)}
   .ribbon-item .sep{color:var(--purple);font-style:italic;padding:0 18px}
-  .ribbon-item .em{color:var(--sky);font-style:italic}
+  .ribbon-item .em{color:var(--ac,#8ecbe2);font-style:italic}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.ribbon-track{animation:none}.wave-divider path{stroke-dashoffset:0;transition:none}.hero-field{animation:none}}
 
@@ -139,7 +142,7 @@
   .belief-pull{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.2vw,30px);line-height:1.3;letter-spacing:-0.015em;color:#fff;border-top:1px solid var(--line);padding-top:28px;margin-top:28px}
   .belief-art{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,0.03);padding:34px;position:relative;overflow:hidden}
   .belief-art::after{content:"";position:absolute;inset:0;background:var(--grad);opacity:.05;pointer-events:none}
-  .belief-art .meta{color:var(--sky);margin-bottom:14px}
+  .belief-art .meta{color:var(--ac,#8ecbe2);margin-bottom:14px}
   .belief-art .q{font-family:var(--serif);font-size:clamp(20px,1.6vw,25px);line-height:1.45}
 
   /* FRAMEWORK 5-beat */
@@ -149,25 +152,25 @@
   .fw .step::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .35s;z-index:0}
   .fw .step:hover::before{opacity:1}
   .fw .step>*{position:relative;z-index:1}
-  .fw .step-num{font-family:var(--sans);font-size:12px;color:var(--sky);margin-bottom:14px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;transition:color .35s}
+  .fw .step-num{font-family:var(--sans);font-size:12px;color:var(--ac,#8ecbe2);margin-bottom:14px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;transition:color .35s}
   .fw .step-title{font-family:var(--serif);font-size:clamp(23px,1.9vw,28px);line-height:1;margin-bottom:14px}
   .fw .step-body{font-size:14px;color:var(--muted);line-height:1.55;transition:color .35s}
   .fw .step:hover .step-num,.fw .step:hover .step-body{color:rgba(255,255,255,0.92)}
   @media(max-width:980px){.fw{grid-template-columns:1fr 1fr}.fw .step{border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:0}.fw .step:nth-child(2n){border-right:0}}
   @media(max-width:560px){.fw{grid-template-columns:1fr}.fw .step{border-right:0!important}}
   .tease{margin-top:clamp(28px,4vw,44px);font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.3vw,28px);line-height:1.35;letter-spacing:-0.015em;color:#fff;max-width:860px}
-  .tease .italic{color:var(--sky)}
+  .tease .italic{color:var(--ac,#8ecbe2)}
 
   /* TESTIMONIALS */
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:980px){.testi-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:640px){.testi-grid{grid-template-columns:1fr}}
   .testi{margin:0;padding:32px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:22px}
-  .testi .qm{font-family:var(--serif);font-style:italic;font-size:72px;color:var(--sky);line-height:0.6;height:24px}
+  .testi .qm{font-family:var(--serif);font-style:italic;font-size:72px;color:var(--ac,#8ecbe2);line-height:0.6;height:24px}
   .testi blockquote{margin:0;font-family:var(--serif);font-size:clamp(16px,1.2vw,18px);line-height:1.55;letter-spacing:-0.01em}
   .testi figcaption{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:18px;font-size:13px}
   .testi .who{color:#fff}
-  .testi .role{color:var(--sky)}
+  .testi .role{color:var(--ac,#8ecbe2)}
 
   /* BOOK */
   .book-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(40px,6vw,80px);align-items:center}
@@ -196,7 +199,7 @@
   .eco-card>*{position:relative;z-index:1}
   .eco-card .en{font-family:var(--serif);font-size:clamp(23px,2.2vw,30px);line-height:1;letter-spacing:-0.015em}
   .eco-card .ed{margin-top:10px;font-size:14.5px;color:var(--muted);line-height:1.55;max-width:380px;transition:color .35s}
-  .eco-card .earr{font-family:var(--sans);font-size:22px;color:var(--sky);transition:transform .25s ease,color .35s}
+  .eco-card .earr{font-family:var(--sans);font-size:22px;color:var(--ac,#8ecbe2);transition:transform .25s ease,color .35s}
   .eco-card:hover .ed{color:rgba(255,255,255,0.92)}
   .eco-card:hover .earr{transform:translateX(5px);color:#fff}
 
@@ -207,7 +210,7 @@
   .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
   .next-step{padding:clamp(24px,3vw,40px) clamp(20px,2.4vw,32px);border-right:1px solid var(--line)}
   .next-step:last-child{border-right:0}
-  .next-step .ix{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--sky);line-height:0.9;margin-bottom:20px}
+  .next-step .ix{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--ac,#8ecbe2);line-height:0.9;margin-bottom:20px}
   .next-step h3{font-family:var(--serif);font-size:clamp(20px,1.9vw,25px);line-height:1.12;color:#fff;margin-bottom:14px}
   .next-step p{font-size:14.5px;color:var(--muted);line-height:1.65}
   @media(max-width:760px){.next-grid{grid-template-columns:1fr}.next-step{border-right:0;border-bottom:1px solid var(--line)}.next-step:last-child{border-bottom:0}}
@@ -215,7 +218,7 @@
   /* FOOTER */
   .footer{background:var(--bg-deep);color:#fff;padding:80px 0 36px;border-top:1px solid var(--line)}
   .footer a{color:rgba(255,255,255,0.72)}
-  .footer a:hover{color:var(--sky)}
+  .footer a:hover{color:var(--ac,#8ecbe2)}
   .footer-grid{display:grid;grid-template-columns:minmax(260px,1.6fr) 1fr 1fr;gap:40px;padding-bottom:56px}
   @media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
@@ -235,10 +238,9 @@
     <a class="nav-logo" href="#top"><img src="public/narrative-mark-white.png" alt="Narrative StorySelling" /></a>
     <div class="nav-links">
       <a class="nav-link" href="#framework">The Framework</a>
-      <a class="nav-link" href="#proof">Proof</a>
       <a class="nav-link" href="#book">The Book</a>
       <a class="nav-link" href="#ecosystem">Companies</a>
-      <a class="btn btn-primary nav-cta" href="book-a-call.html">Book a Call <span class="arr">→</span></a>
+      <a class="btn btn-primary nav-cta" href="book-a-call.html">Work with us <span class="arr">→</span></a>
     </div>
   </div>
 </nav>
@@ -248,7 +250,7 @@
 <div class="hero-wrap">
   <div class="hero-field"></div>
 <!-- HERO -->
-<section class="hero">
+<section class="hero ac-purple">
   <div class="container">
     <div class="hero-grid">
       <div>
@@ -283,7 +285,7 @@
 </section>
 
 <!-- STAT BAND (shares the hero's gradient backdrop) -->
-<section class="section stat-section">
+<section class="section stat-section ac-pink">
   <div class="container">
     <div class="section-head reveal" style="margin-bottom:clamp(32px,5vw,64px)">
       <div class="eyebrow">The receipts</div>
@@ -291,7 +293,7 @@
     </div>
     <div class="stat-grid">
       <div class="stat-cell reveal"><div class="stat-num grad-text" data-count="28.6" data-decimals="1" data-prefix="$" data-suffix="M+">$28.6M+</div><div class="meta">In closed outcomes</div></div>
-      <div class="stat-cell reveal"><div class="stat-num" data-count="5" data-decimals="0" data-prefix="" data-suffix="">5</div><div class="meta">Beats. One story.</div></div>
+      <div class="stat-cell reveal"><div class="stat-num" data-count="1000" data-decimals="0" data-prefix="" data-suffix="'s">1000's</div><div class="meta">Trained on the system</div></div>
       <div class="stat-cell reveal"><div class="stat-num" data-count="1" data-decimals="0" data-prefix="#" data-suffix="">#1</div><div class="meta">Amazon best seller</div></div>
     </div>
     <div class="reveal" style="margin-top:clamp(40px,7vw,80px);display:flex;align-items:baseline;gap:28px;flex-wrap:wrap">
@@ -303,7 +305,7 @@
 </div><!-- /hero-wrap -->
 
 <!-- WHY STORY SELLS -->
-<section class="section">
+<section class="section ac-sky">
   <div class="container">
     <div class="belief-grid reveal">
       <div>
@@ -320,14 +322,14 @@
       </div>
       <div class="belief-art">
         <div class="meta">The shift</div>
-        <div class="q">"What you say matters. But <em style="font-style:italic;color:var(--sky)">how you say it — and in what order</em> — matters more. The sequencing is what creates movement."</div>
+        <div class="q">"What you say matters. But <em style="font-style:italic;color:var(--ac,#8ecbe2)">how you say it — and in what order</em> — matters more. The sequencing is what creates movement."</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FRAMEWORK -->
-<section class="section alt" id="framework">
+<section class="section alt ac-purple" id="framework">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">The method</div>
@@ -354,7 +356,7 @@
 </section>
 
 <!-- PROOF / TESTIMONIALS -->
-<section class="section" id="proof">
+<section class="section ac-sky" id="proof">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Why it works</div>
@@ -381,7 +383,7 @@
 </section>
 
 <!-- BOOK -->
-<section class="section alt" id="book">
+<section class="section alt ac-pink" id="book">
   <div class="container">
     <div class="book-grid">
       <div class="book-art reveal"><div class="glow"></div><img src="public/how-to-sell-with-story.png" alt="How to Sell With Story — by Chris Ford" /></div>
@@ -399,7 +401,7 @@
 </section>
 
 <!-- FOUNDER -->
-<section class="section">
+<section class="section ac-purple">
   <div class="container">
     <div class="founder-grid">
       <div class="founder-photo reveal"><img src="public/cf-headshot.png" alt="Chris Ford" /></div>
@@ -415,7 +417,7 @@
 </section>
 
 <!-- ECOSYSTEM -->
-<section class="section alt" id="ecosystem">
+<section class="section alt ac-sky" id="ecosystem">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">The Narrative Companies</div>
@@ -444,7 +446,7 @@
 </section>
 
 <!-- FINAL CTA -->
-<section class="section final" style="padding-bottom:clamp(80px,10vw,130px)">
+<section class="section final ac-pink" style="padding-bottom:clamp(80px,10vw,130px)">
   <div class="container">
     <div class="section-head reveal" style="max-width:780px">
       <div class="eyebrow">Your move</div>
