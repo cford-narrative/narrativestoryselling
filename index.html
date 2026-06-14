@@ -20,6 +20,9 @@
     --rule:rgba(27,29,34,0.14);--rule-strong:rgba(27,29,34,0.28);
     /* brand jewels */
     --teal:#5CA1C1;--dark-teal:#0F4761;--sky:#8ecbe2;
+    /* premium gold — StorySelling's brand jewel (replaces amber) */
+    --gold:#A8842B;--gold-bright:#C9A227;--gold-champagne:#CDB06A;
+    --gold-grad:linear-gradient(135deg,#E7CE80 0%,#C9A227 45%,#8C6E1C 100%);
     --pink:#E921A8;--purple:#B163E6;--powder:#a883f8;--dark-purple:#752cff;
     --cream-muted:rgba(250,246,239,0.64);
     --serif:"Source Serif 4","Times New Roman",serif;
@@ -52,14 +55,14 @@
   .btn .arr{display:inline-block;transition:transform .25s ease}
   .btn:hover .arr{transform:translateX(4px)}
   .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:var(--ink);color:var(--paper)}
-  .btn-primary:hover{background:var(--dark-teal);box-shadow:0 14px 30px -16px rgba(15,71,97,.7)}
+  .btn-primary{background:var(--gold);color:#fff}
+  .btn-primary:hover{background:var(--ink);box-shadow:0 14px 30px -16px rgba(168,132,43,.6)}
   .btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule-strong)}
   .btn-ghost:hover{background:var(--ink);color:var(--paper);box-shadow:inset 0 0 0 1px var(--ink)}
-  .btn-pink{background:var(--pink);color:#fff}
-  .btn-pink:hover{background:var(--ink);box-shadow:0 16px 36px -16px rgba(233,33,168,.55)}
+  .btn-pink{background:var(--gold);color:#fff}
+  .btn-pink:hover{background:var(--ink);box-shadow:0 16px 36px -16px rgba(168,132,43,.55)}
   .btn-light{background:var(--paper);color:var(--ink)}
-  .btn-light:hover{background:var(--sky);color:var(--ink)}
+  .btn-light:hover{background:var(--gold);color:#fff}
 
   /* NAV */
   .nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px) saturate(120%);-webkit-backdrop-filter:blur(14px) saturate(120%);background:rgba(252,248,242,0.62);border-bottom:1px solid transparent;transition:border-color .25s ease,background .25s ease}
@@ -68,7 +71,7 @@
   .nav-logo img{height:34px;width:auto;display:block}
   .nav-links{display:flex;align-items:center;gap:4px}
   .nav-link{padding:8px 14px;font-size:14px;font-weight:500;color:var(--ink);border-radius:999px;transition:background .15s ease,color .15s ease}
-  .nav-link:hover{background:rgba(27,29,34,0.06);color:var(--dark-teal)}
+  .nav-link:hover{background:rgba(27,29,34,0.06);color:var(--gold)}
   .nav-cta{margin-left:10px;white-space:nowrap;padding:11px 20px}
   @media(max-width:860px){.nav-links .nav-link{display:none}}
   @media(max-width:720px){.nav-inner{padding:0 18px;height:72px}.nav-logo img{height:30px}}
@@ -78,19 +81,27 @@
   .hero>.container{position:relative;z-index:2}
   @media(min-width:901px){.hero{display:flex;flex-direction:column;min-height:calc(100vh - 82px)}.hero>.container{flex:1;display:flex;align-items:center;width:100%}}
   .hero-blob{position:absolute;border-radius:999px;pointer-events:none;z-index:0;filter:blur(8px)}
-  .hero-blob.a{top:-160px;right:-220px;width:640px;height:640px;background:radial-gradient(circle at 35% 35%,rgba(177,99,230,0.18),rgba(168,131,248,0.08) 42%,transparent 70%)}
-  .hero-blob.b{bottom:-260px;left:-200px;width:560px;height:560px;background:radial-gradient(circle at 55% 55%,rgba(92,161,193,0.20),rgba(15,71,97,0.08) 46%,transparent 72%)}
+  .hero-blob.a{top:-200px;right:-240px;width:660px;height:660px;background:radial-gradient(circle at 38% 36%,rgba(231,206,128,0.38),rgba(231,206,128,0.12) 46%,transparent 70%)}
+  .hero-blob.b{bottom:-260px;left:-200px;width:560px;height:560px;background:radial-gradient(circle at 55% 55%,rgba(27,29,34,0.10),rgba(27,29,34,0.05) 46%,transparent 72%)}
   @media(max-width:720px){.hero-blob{display:none}}
   .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.22fr 1fr;gap:clamp(36px,5vw,80px);align-items:center}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
   .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.4vw,60px);line-height:1.02;letter-spacing:-0.03em}
+  /* hero accents go gold: eyebrow + subhead emphasis flat, headline in metallic foil */
+  .hero .eyebrow{color:var(--gold)}
+  .hero .lead .italic{color:var(--gold)}
+  .hero h1 .italic{
+    background:linear-gradient(135deg,#C9A227 0%,#9A7B2A 52%,#6E5618 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+  }
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(22px,2.4vw,32px)}
   .ticker{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--muted);margin-top:clamp(20px,2.2vw,28px)}
-  .ticker-dot{width:7px;height:7px;border-radius:999px;background:var(--pink);flex:none;animation:pulse-dot 2s ease-in-out infinite}
-  @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(233,33,168,0.5)}50%{box-shadow:0 0 0 5px rgba(233,33,168,0)}}
+  .ticker-dot{width:7px;height:7px;border-radius:999px;background:var(--gold-bright);flex:none;animation:pulse-dot 2s ease-in-out infinite}
+  @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(201,162,39,0.55)}50%{box-shadow:0 0 0 5px rgba(201,162,39,0)}}
   .ticker strong{color:var(--ink);font-weight:600}
   .hero-art{position:relative;display:flex;justify-content:center}
-  .hero-art .halo{position:absolute;inset:-30px -10px 0 -30px;background:radial-gradient(ellipse at 60% 40%,rgba(177,99,230,0.22),rgba(92,161,193,0.12) 55%,transparent 75%);filter:blur(46px);border-radius:50%;z-index:0}
+  .hero-art .halo{position:absolute;inset:-30px -10px 0 -30px;background:radial-gradient(ellipse at 60% 40%,rgba(231,206,128,0.34),rgba(231,206,128,0.10) 55%,transparent 75%);filter:blur(46px);border-radius:50%;z-index:0}
   .hero-art img{position:relative;z-index:1;width:auto;max-height:min(54vh,440px);border-radius:12px;box-shadow:0 40px 80px -36px rgba(27,29,34,0.55),0 0 0 1px rgba(27,29,34,0.05)}
   @media(max-width:900px){.hero-art img{max-height:360px}}
 
@@ -137,9 +148,9 @@
   .section{padding:clamp(72px,9vw,124px) 0;position:relative}
   .section.soft{background:var(--bone-soft)}
   .section.ink{background:var(--ink);color:var(--paper)}
-  .section.ink .eyebrow{color:var(--sky)}
+  .section.ink .eyebrow{color:var(--gold-champagne)}
   .section.ink h2,.section.ink h3{color:var(--paper)}
-  .section.ink .italic{color:var(--sky)}
+  .section.ink .italic{color:var(--gold-champagne)}
   .section.ink .lead{color:var(--cream-muted)}
   .rule{height:1px;background:var(--rule);border:0;margin:0}
   /* Authority tier: section heads are centered (vs left-aligned on the marketing sites) */
@@ -148,6 +159,13 @@
   .section-head .eyebrow{margin-bottom:20px}
   .section-head .sub{margin:22px auto 0;font-size:clamp(16px,1.4vw,18px);color:var(--muted);line-height:1.65;max-width:620px}
   .section.ink .section-head .sub{color:var(--cream-muted)}
+  /* THE BOOK — gold foil moment (ties to the foil cover); deeper grad stays legible on cream */
+  #book .eyebrow{color:var(--gold)}
+  #book h2 .italic{
+    background:linear-gradient(135deg,#C9A227 0%,#9A7B2A 52%,#6E5618 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;font-style:italic;
+  }
 
   /* STAT BAND */
   .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -156,7 +174,9 @@
   .stat-cell:not(:first-child){padding-left:32px}
   .stat-cell:last-child{border-right:0}
   .stat-num{font-family:var(--serif);font-size:clamp(46px,8vw,88px);line-height:0.9;letter-spacing:-0.04em;font-weight:500;font-variant-numeric:tabular-nums}
-  .stat-num.hot{color:var(--dark-teal)}
+  .stat-num.hot{color:var(--gold)}
+  /* The receipts: a money section — gold dominates (eyebrow + emphasized words) */
+  .stat-band .eyebrow,.stat-band .italic{color:var(--gold)}
   .stat-cell .meta{margin-top:18px}
   @media(max-width:820px){.stat-grid{grid-template-columns:1fr}.stat-cell{border-right:0;border-bottom:1px solid var(--rule);padding:22px 0!important}.stat-cell:last-child{border-bottom:0}}
   /* Authority tier: centered head → center the stat trio + method row beneath it */
@@ -169,9 +189,9 @@
   .belief-grid p.body{font-size:17px;line-height:1.85;color:var(--cream-muted);margin-top:24px}
   .belief-pull{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.2vw,30px);line-height:1.3;letter-spacing:-0.015em;color:var(--paper);border-top:1px solid rgba(255,255,255,0.14);padding-top:28px;margin-top:28px}
   .belief-art{border:1px solid rgba(255,255,255,0.14);border-radius:22px;background:rgba(255,255,255,0.03);padding:34px}
-  .belief-art .meta{color:var(--sky);margin-bottom:14px}
+  .belief-art .meta{color:var(--gold-champagne);margin-bottom:14px}
   .belief-art .q{font-family:var(--serif);font-size:clamp(20px,1.6vw,25px);line-height:1.45;color:var(--paper)}
-  .belief-art .q em{font-style:italic;color:var(--sky)}
+  .belief-art .q em{font-style:italic;color:var(--gold-champagne)}
 
   /* FRAMEWORK */
   .fw{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong)}
@@ -191,11 +211,11 @@
   @media(max-width:980px){.testi-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:640px){.testi-grid{grid-template-columns:1fr}}
   .testi{margin:0;padding:32px;border:1px solid rgba(255,255,255,0.14);border-radius:22px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:22px}
-  .testi .qm{font-family:var(--serif);font-style:italic;font-size:72px;color:var(--sky);line-height:0.6;height:24px}
+  .testi .qm{font-family:var(--serif);font-style:italic;font-size:72px;color:var(--gold-champagne);line-height:0.6;height:24px}
   .testi blockquote{margin:0;font-family:var(--serif);font-size:clamp(16px,1.2vw,18px);line-height:1.55;letter-spacing:-0.01em;color:var(--paper)}
   .testi figcaption{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,0.14);padding-top:18px;font-size:13px}
   .testi .who{color:var(--paper)}
-  .testi .role{color:var(--sky)}
+  .testi .role{color:var(--gold-champagne)}
 
   /* BOOK */
   .book-grid{display:grid;grid-template-columns:auto 1fr;gap:clamp(40px,6vw,80px);align-items:center}
@@ -232,7 +252,7 @@
   .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.16)}
   .next-step{padding:clamp(24px,3vw,40px) clamp(20px,2.4vw,32px);border-right:1px solid rgba(255,255,255,0.16)}
   .next-step:last-child{border-right:0}
-  .next-step .ix{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--sky);line-height:0.9;margin-bottom:20px}
+  .next-step .ix{font-family:var(--serif);font-style:italic;font-size:32px;color:var(--gold-champagne);line-height:0.9;margin-bottom:20px}
   .next-step h3{font-family:var(--serif);font-size:clamp(20px,1.9vw,25px);line-height:1.12;color:var(--paper);margin-bottom:14px}
   .next-step p{font-size:14.5px;color:var(--cream-muted);line-height:1.65}
   @media(max-width:760px){.next-grid{grid-template-columns:1fr}.next-step{border-right:0;border-bottom:1px solid rgba(255,255,255,0.16)}.next-step:last-child{border-bottom:0}}
@@ -289,7 +309,7 @@
         </div>
         <div class="ticker reveal">
           <span class="ticker-dot"></span>
-          <span><strong style="color:var(--dark-teal)">$28.6M+</strong> in outcomes &middot; <strong>#1</strong> Amazon best seller &middot; <strong>1,000s</strong> trained on the system</span>
+          <span><strong style="color:var(--gold)">$28.6M+</strong> in outcomes &middot; <strong>#1</strong> Amazon best seller &middot; <strong>1,000s</strong> trained on the system</span>
         </div>
       </div>
       <div class="hero-art reveal">
@@ -513,7 +533,7 @@
         <span class="earr">→</span>
       </a>
       <a class="eco-card reveal" href="https://www.narrativecareers.com" target="_blank" rel="noopener">
-        <div><div class="eco-head"><img class="eco-icon" src="public/narrative-careers-icon.png" alt="" aria-hidden="true" /><div class="en">Narrative Careers</div></div><div class="ed">A career coaching program for 16–21 year olds. We do the work, they get the offer. The answer for parents worried about their kid&rsquo;s future.</div></div>
+        <div><div class="eco-head"><img class="eco-icon" src="public/narrative-careers-icon-teal.png" alt="" aria-hidden="true" /><div class="en">Narrative Careers</div></div><div class="ed">A career coaching program for 16–21 year olds. We do the work, they get the offer. The answer for parents worried about their kid&rsquo;s future.</div></div>
         <span class="earr">→</span>
       </a>
     </div>
