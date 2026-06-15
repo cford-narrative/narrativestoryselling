@@ -106,18 +106,21 @@
   @media(max-width:900px){.hero-art img{max-height:360px}}
 
   /* STORY WAVE */
-  .wave-divider{display:block;width:100%;height:clamp(36px,5vw,64px);color:var(--teal)}
+  .wave-divider{display:block;width:100%;height:clamp(36px,5vw,64px);color:var(--gold-bright)}
   .wave-divider path{stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:3000;stroke-dashoffset:3000;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)}
   .wave-divider.in path{stroke-dashoffset:0}
   .hero-wave-end{position:relative;z-index:2;width:100%;margin-top:clamp(14px,2.5vw,30px)}
   @media(prefers-reduced-motion:reduce){.wave-divider path{stroke-dashoffset:0;transition:none}}
 
   /* STORY ARC — the five beats plotted as an emotional story curve */
+  /* framework section carries StorySelling's gold identity */
+  #framework .eyebrow{color:var(--gold)}
+  #framework h2 .italic{color:var(--gold)}
   .story-arc{display:block;width:100%;height:auto;max-width:1000px;margin:8px auto 6px;overflow:visible}
   .story-arc .arc-line{stroke-dasharray:1300;stroke-dashoffset:1300;transition:stroke-dashoffset 2.4s cubic-bezier(.4,0,.2,1)}
   .story-arc.in .arc-line{stroke-dashoffset:0}
-  .story-arc .arc-dot{fill:var(--dark-teal);stroke:var(--bone);stroke-width:4}
-  .story-arc .arc-dot-payoff{fill:var(--pink)}
+  .story-arc .arc-dot{fill:var(--gold);stroke:var(--bone);stroke-width:4}
+  .story-arc .arc-dot-payoff{fill:var(--gold-bright)}
   .story-arc .arc-title{font-family:var(--serif);font-size:21px;fill:var(--ink);letter-spacing:-0.01em}
   .story-arc .arc-beat{opacity:0;transition:opacity .7s ease}
   .story-arc.in .arc-beat{opacity:1}
@@ -131,9 +134,9 @@
   .story-arc-mobile{display:none}
   .story-arc-mobile .arc-line{stroke-dasharray:1100;stroke-dashoffset:1100;transition:stroke-dashoffset 2s cubic-bezier(.4,0,.2,1)}
   .story-arc-mobile.in .arc-line{stroke-dashoffset:0}
-  .story-arc-mobile .arc-dot{fill:var(--dark-teal);stroke:var(--bone);stroke-width:4}
-  .story-arc-mobile .arc-dot-payoff{fill:var(--pink)}
-  .story-arc-mobile .arc-num-m{font-family:var(--sans);font-size:12px;fill:var(--dark-teal);letter-spacing:0.14em;text-transform:uppercase;font-weight:600}
+  .story-arc-mobile .arc-dot{fill:var(--gold);stroke:var(--bone);stroke-width:4}
+  .story-arc-mobile .arc-dot-payoff{fill:var(--gold-bright)}
+  .story-arc-mobile .arc-num-m{font-family:var(--sans);font-size:12px;fill:var(--gold);letter-spacing:0.14em;text-transform:uppercase;font-weight:600}
   .story-arc-mobile .arc-title-m{font-family:var(--serif);font-size:23px;fill:var(--ink)}
   .story-arc-mobile .arc-beat{opacity:0;transition:opacity .6s ease}
   .story-arc-mobile.in .arc-beat{opacity:1}
@@ -380,27 +383,27 @@
     <svg class="story-arc" viewBox="0 0 1000 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five beats drawn as a story arc — Opportunity opens high, the Problem dips into despair, the Solution climbs back out, Action holds high, and Transformation peaks as the payoff.">
       <defs>
         <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#5CA1C1"/>
-          <stop offset="0.58" stop-color="#752cff"/>
-          <stop offset="1" stop-color="#E921A8"/>
+          <stop offset="0" stop-color="#8C6E1C"/>
+          <stop offset="0.58" stop-color="#A8842B"/>
+          <stop offset="1" stop-color="#C9A227"/>
         </linearGradient>
       </defs>
       <path class="arc-line" d="M110,175 C 207.5,175 207.5,300 305,300 C 402.5,300 402.5,220 500,220 C 597.5,220 597.5,160 695,160 C 792.5,160 792.5,110 890,110" stroke="url(#arcGrad)" stroke-width="3" stroke-linecap="round"/>
       <g class="arc-beat">
         <text class="arc-title" x="110" y="149" text-anchor="middle">Opportunity</text>
-        <circle class="arc-dot" cx="110" cy="175" r="8" style="fill:#5CA1C1"/>
+        <circle class="arc-dot" cx="110" cy="175" r="8" style="fill:#8C6E1C"/>
       </g>
       <g class="arc-beat">
         <text class="arc-title" x="305" y="274" text-anchor="middle">Problem</text>
-        <circle class="arc-dot" cx="305" cy="300" r="8" style="fill:#676FDC"/>
+        <circle class="arc-dot" cx="305" cy="300" r="8" style="fill:#9A7B2A"/>
       </g>
       <g class="arc-beat">
         <text class="arc-title" x="500" y="194" text-anchor="middle">Solution</text>
-        <circle class="arc-dot" cx="500" cy="220" r="8" style="fill:#752cff"/>
+        <circle class="arc-dot" cx="500" cy="220" r="8" style="fill:#A8842B"/>
       </g>
       <g class="arc-beat">
         <text class="arc-title" x="695" y="134" text-anchor="middle">Action</text>
-        <circle class="arc-dot" cx="695" cy="160" r="8" style="fill:#A428DC"/>
+        <circle class="arc-dot" cx="695" cy="160" r="8" style="fill:#B8923C"/>
       </g>
       <g class="arc-beat">
         <text class="arc-title" x="890" y="84" text-anchor="middle">Transformation</text>
@@ -411,31 +414,31 @@
     <svg class="story-arc-mobile" viewBox="0 0 360 700" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five beats as a story arc flowing top to bottom — Opportunity, a dip into the Problem, then Solution, Action, and the Transformation payoff.">
       <defs>
         <linearGradient id="arcGradV" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#5CA1C1"/>
-          <stop offset="0.58" stop-color="#752cff"/>
-          <stop offset="1" stop-color="#E921A8"/>
+          <stop offset="0" stop-color="#8C6E1C"/>
+          <stop offset="0.58" stop-color="#A8842B"/>
+          <stop offset="1" stop-color="#C9A227"/>
         </linearGradient>
       </defs>
       <path class="arc-line" d="M110,70 C110,140 45,140 45,210 C45,280 95,280 95,350 C95,420 135,420 135,490 C135,560 150,560 150,630" stroke="url(#arcGradV)" stroke-width="4.5" stroke-linecap="round"/>
       <g class="arc-beat">
         <text class="arc-num-m" x="190" y="64">Beat 01</text>
         <text class="arc-title-m" x="190" y="88">Opportunity</text>
-        <circle class="arc-dot" cx="110" cy="70" r="9" style="fill:#5CA1C1"/>
+        <circle class="arc-dot" cx="110" cy="70" r="9" style="fill:#8C6E1C"/>
       </g>
       <g class="arc-beat">
         <text class="arc-num-m" x="190" y="204">Beat 02</text>
         <text class="arc-title-m" x="190" y="228">Problem</text>
-        <circle class="arc-dot" cx="45" cy="210" r="9" style="fill:#676FDC"/>
+        <circle class="arc-dot" cx="45" cy="210" r="9" style="fill:#9A7B2A"/>
       </g>
       <g class="arc-beat">
         <text class="arc-num-m" x="190" y="344">Beat 03</text>
         <text class="arc-title-m" x="190" y="368">Solution</text>
-        <circle class="arc-dot" cx="95" cy="350" r="9" style="fill:#752cff"/>
+        <circle class="arc-dot" cx="95" cy="350" r="9" style="fill:#A8842B"/>
       </g>
       <g class="arc-beat">
         <text class="arc-num-m" x="190" y="484">Beat 04</text>
         <text class="arc-title-m" x="190" y="508">Action</text>
-        <circle class="arc-dot" cx="135" cy="490" r="9" style="fill:#A428DC"/>
+        <circle class="arc-dot" cx="135" cy="490" r="9" style="fill:#B8923C"/>
       </g>
       <g class="arc-beat">
         <text class="arc-num-m" x="190" y="624">Beat 05</text>
@@ -445,15 +448,15 @@
     </svg>
 
     <div class="fw reveal">
-      <div class="step"><div class="step-num" style="color:#3F8AA8">Beat 01 · Opportunity</div><div class="step-body">Open with the possibility of a better future — before you ever mention what you sell.</div></div>
-      <div class="step"><div class="step-num" style="color:#5A62C8">Beat 02 · Problem</div><div class="step-body">Name what's truly in the way, so the buyer feels understood instead of pitched.</div></div>
-      <div class="step"><div class="step-num" style="color:#6A22E0">Beat 03 · Solution</div><div class="step-body">Position your product as the bridge — the obvious path from here to there.</div></div>
-      <div class="step"><div class="step-num" style="color:#9A1FC0">Beat 04 · Action</div><div class="step-body">Show exactly how it works, in the order that builds belief, not confusion.</div></div>
-      <div class="step"><div class="step-num" style="color:#D1148F">Beat 05 · Transformation</div><div class="step-body">Paint the "after" picture so vividly the decision feels already made.</div></div>
+      <div class="step"><div class="step-num" style="color:#8C6E1C">Beat 01 · Opportunity</div><div class="step-body">Open with the possibility of a better future — before you ever mention what you sell.</div></div>
+      <div class="step"><div class="step-num" style="color:#9A7B2A">Beat 02 · Problem</div><div class="step-body">Name what's truly in the way, so the buyer feels understood instead of pitched.</div></div>
+      <div class="step"><div class="step-num" style="color:#A8842B">Beat 03 · Solution</div><div class="step-body">Position your product as the bridge — the obvious path from here to there.</div></div>
+      <div class="step"><div class="step-num" style="color:#B8923C">Beat 04 · Action</div><div class="step-body">Show exactly how it works, in the order that builds belief, not confusion.</div></div>
+      <div class="step"><div class="step-num" style="color:#C9A227">Beat 05 · Transformation</div><div class="step-body">Paint the "after" picture so vividly the decision feels already made.</div></div>
     </div>
 
     <p class="tease reveal">
-      There's a sixth element most founders never see coming — <span class="hot" style="color:var(--dark-teal)">the "Guard at the Door"</span> — that decides whether any of this matters.
+      There's a sixth element most founders never see coming — <span class="hot" style="color:var(--gold)">the "Guard at the Door"</span> — that decides whether any of this matters.
     </p>
   </div>
 </section>
